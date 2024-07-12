@@ -281,7 +281,7 @@ const App = () => {
         </span>
       </div>
       <div className="flex xs:flex-col md:flex-row items-center md:w-[100%] md:h-[90%] justify-center overflow-y-sroll no-scrollbar">
-        <div className="bg-slate-400 flex flex-col pl-[5%] items-center pt-8 md:h-[100%] md:w-[60%]">
+        <div className="bg-slate-400 flex flex-col md:pl-[5%] items-center pt-8 md:h-[100%] md:w-[60%]">
           <div className="flex flex-col items-center justify-center md:w-[85%] md:h-[80%] bg-slate-400 mb-5">
             <div
               className={`video-container paused ${
