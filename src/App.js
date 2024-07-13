@@ -275,18 +275,18 @@ const App = () => {
 
   return (
     <div className="flex flex-col w-full h-screen bg-slate-400 justify-center items-center overflow-y-scroll no-scrollbar">
-      <div className="md:h-[10%] md:w-full flex flex-col justify-center items-center">
-        <span className="xs:text-base md:text-2xl xl:text-4xl h-full font-bold pt-9">
+      <div className="md:h-[10%] xs:h-[10%] md:w-full flex flex-col xs:w-full text-center justify-end">
+        <span className="xs:text-base md:text-2xl xl:text-4xl h-full xs:w-full font-bold pt-9 z-10">
           Vidéo à l'attention de Denis Joubin
         </span>
       </div>
-      <div className="flex xs:flex-col md:flex-row items-center md:w-[100%] md:h-[90%] justify-center overflow-y-sroll no-scrollbar">
-        <div className="bg-slate-400 flex flex-col md:pl-[5%] items-center pt-8 md:h-[100%] md:w-[60%]">
-          <div className="flex flex-col items-center justify-center md:w-[85%] md:h-[80%] bg-slate-400 mb-5">
+      <div className="flex xs:flex-col xs:h-[90%] xs:mb-5 md:flex-row items-center md:w-[100%] md:h-[90%] justify-center overflow-y-sroll no-scrollbar">
+        <div className="bg-slate-400 flex flex-col xs:w-[90%] md:pl-[5%] items-center pt-8 md:h-[100%] md:w-[60%] xs:h-[50%]">
+          <div className="flex flex-col items-center justify-center md:w-[85%] md:h-[80%] xs:w-[90%] xs:h-[90%] bg-slate-400 mb-5">
             <div
               className={`video-container paused ${
                 isFullScreen ? "full-screen" : ""
-              } md:w-[95%] md:h-[90%] `}
+              } md:w-[95%] md:h-[90%] xs:h-[100%]`}
               data-volume-level="high"
               ref={videoContainerRef}
             >
@@ -299,16 +299,17 @@ const App = () => {
               />
               <div
                 id="video2"
-                className={`absolute bottom-12 left-6 overflow-hidden  border-2 border-white ${
-                  isVideoFull ? "full-video-container" : ""
+                className={` ${isVideoFull ? "full-video-container" : 
+                  "absolute xs:bottom-5 bottom-12 left-6 overflow-hidden border-2 border-white w-[17%] h-[27%] rounded-full" 
                 }`}
               >
                 <video
                   ref={videoRef}
-                  className={`relative w-full h-full object-cover ${
-                    isVideoFull ? "full-video" : ""
+                  className={` ${isVideoFull ? "full-video" : 
+                    "relative w-full h-full object-cover rounded-full"
                   }`}
                   onClick={togglePlayPause}
+                  controls = {false}
                 >
                   <source
                     src="https://media.repliq.co/videos/YLdYI1YSBsQxYGKKq6L3xu2BuKi1/YL9c5d436i1_video.mp4"
@@ -438,25 +439,25 @@ const App = () => {
             </div>
           </div>
           <div className="flex items-center justify-center xs:w-[90%] md:w-[85%] mb-8">
-            <div className="md:w-[95%] flex justify-between items-center xs:w-[100%]">
+            <div className="md:w-[95%] flex justify-between items-center xs:w-[90%]">
               <img
                 src={Logo}
                 className="md:w-[25%] md:max-h-[20%] xs:w-[80px] xs:h-[40px]"
               />
               <button
                 onClick={handleClick}
-                className="bg-black text-white xs:w-[220px] xs:h-[40px] xs:text-base p-2 rounded-xl  md:w-[43%] md:max-h-[22%] md:text-lg xl:text-xl"
+                className="bg-black text-white xs:w-max-w-[50%] xs:h-[40px] p-1 rounded-xl  md:max-w-[60%] md:max-h-[25%] md:text-base xl:text-xl xs:text-sm"
               >
                 Plannifier un appel (gratuit)
               </button>
             </div>
           </div>
         </div>
-        <div className=" xs:w-[90%] xs:h-[400px] md:h-[80%] md:w-[34%] object-contain overflow-y-scroll no-scrollbar">
-          <div className="md:w-[80%] xs:w-[100%] xs:h-[100%] overflow-y-scroll no-scrollbar">
+        <div className="xs:flex xs:items-center xs:justify-center xs:w-[90%] xs:h-[400px] md:h-[80%] md:w-[34%] xl:h-[85%] object-contain overflow-y-scroll no-scrollbar">
+          <div className="md:w-[80%] xs:w-[90%] xs:h-[100%] overflow-y-scroll no-scrollbar xs:flex xs:items-center xs:justify-center">
             <Cal
               calLink="gvald/appel"
-              style={{ width: "100%", height: "100%" }}
+              style={{ width: "90%", height: "100%" }}
               config={{ layout: "month_view" }}
               className="overflow-y-scroll no-scrollbar object-cover"
             ></Cal>
